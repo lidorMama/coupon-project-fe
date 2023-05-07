@@ -1,0 +1,44 @@
+.Coupon {
+    background-color: white;
+    box-shadow: 0 0 50px rgb(69, 72, 71);
+    width: 200px;
+    /* height: 200px; */
+    margin: 30px;
+    border-radius: 30px;
+    border: 1px solid #bcb9b9;
+    float:left;
+}
+
+.Coupon:hover {
+    border: 1px solid black;
+}
+
+.Coupon>img {
+    border-radius: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 190px;
+    /* height: 130px; */
+    padding-top: 10px;
+}
+
+.Coupon>.card {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    padding: 1px 25px;
+}
+
+.card>h2 {
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+    margin: 0px;
+    text-align: center;
+}
+
+.card>p {
+    font-size: 19px;
+    font-family: "Times New Roman", Times, serif;
+    margin: 4px 0px 12px 0px;
+}

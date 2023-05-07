@@ -1,0 +1,29 @@
+.layout {
+  height: 100%;
+  /* border: 2px solid; */
+  background-color: rgba(255, 255, 255, 0.711);
+  text-align: center;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 10% 90%;
+}
+
+/* .layout>* {
+  border: 2px solid rgb(217, 212, 212);
+} */
+
+.layout>header,
+footer {
+  grid-column: span 12;
+  background-image: linear-gradient(to right, rgb(248, 150, 215), rgb(226, 212, 212));
+}
+
+
+/* .layout>aside {
+  grid-column: span 2;
+} */
+
+.layout>main {
+  grid-column: span 12;
+}

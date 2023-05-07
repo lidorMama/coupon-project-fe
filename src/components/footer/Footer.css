@@ -1,0 +1,15 @@
+.Footer {
+  background-image: linear-gradient(to right, rgb(248, 150, 215), rgb(226, 212, 212));
+}
+
+.Footer>.signature {
+  display: block;
+  text-align: center;
+  width: 375px;
+}
+
+.signature p {
+  color: black;
+  font-family: 'Brush Script MT', cursive;
+  font-size: 20px;
+}
