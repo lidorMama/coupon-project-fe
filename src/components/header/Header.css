@@ -1,7 +1,7 @@
-
 .Header {
   overflow: hidden;
-  background-image: linear-gradient(to right, rgb(248, 150, 215) , rgb(226, 212, 212));}
+  background-image: linear-gradient(to right, rgb(248, 150, 215), rgb(226, 212, 212));
+}
 
 .Header a {
   float: left;
@@ -15,22 +15,33 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .Header a:hover {
-  background-color:rgb(250, 207, 236);
+  background-color: rgb(250, 207, 236);
   color: black;
 }
-
 
 .Header input {
   float: right;
   padding: 6px;
-  border: 2px solid rgba(128, 128, 128, 0.489);
+  border: 2px solid black;
   border-radius: 12px;
-  padding: 5px;  margin-top: 20px;
+  padding: 5px;
+  margin-top: 20px;
   margin-right: 16px;
   font-size: 17px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.Header a>.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f990;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.Header a:hover .dropdown-content {
+  display: block;
 }
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally  */

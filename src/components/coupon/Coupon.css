@@ -32,13 +32,13 @@
 
 .card>h2 {
     font-size: 30px;
-    font-family: "Times New Roman", Times, serif;
+    font-family: Garamond, serif;
     margin: 0px;
     text-align: center;
 }
 
 .card>p {
     font-size: 19px;
-    font-family: "Times New Roman", Times, serif;
+    font-family: Garamond, serif;
     margin: 4px 0px 12px 0px;
 }

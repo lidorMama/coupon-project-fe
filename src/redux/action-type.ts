@@ -2,5 +2,6 @@ export enum ActionType {
     SaveCouponsList,
     ChangeCouponName,
     SaveDecryptedToken,
-    SaveSubText
+    SaveSubText,
+    SaveCategoriesList
 }

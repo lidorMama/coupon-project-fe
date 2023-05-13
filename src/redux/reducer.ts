@@ -19,7 +19,7 @@ export function reduce(oldAppState: AppState = appStateInitialValue, action: Act
         case ActionType.SaveDecryptedToken:
             newAppState.successfulLoginData = action.payload.decryptedToken;
             break;
-            
+
         case ActionType.ChangeCouponName:
             let couponId = action.payload.couponId;
             let coupon = newAppState.couponsList.find((coupon) => coupon.id == couponId) as ICoupon;
@@ -30,6 +30,9 @@ export function reduce(oldAppState: AppState = appStateInitialValue, action: Act
             newAppState.subText = action.payload.subText;
             break;
 
+        case ActionType.SaveCategoriesList:
+            newAppState.categoriesList = action.payload.category;
+            break;
     }
 
     // After returning the new state, it's being published to all subscribers
