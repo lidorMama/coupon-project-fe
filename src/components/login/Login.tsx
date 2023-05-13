@@ -17,7 +17,6 @@ function Login() {
   async function onButtonClick() {
     try {
       const response = await axios.post("http://localhost:8080/user/login", { userName, password });
-      // console.log(response);
       let token: string = response.data;
       let decodedToken: any = jwt_decode(token);
       let strSuccessfulLoginResponse: string = decodedToken.sub;
@@ -34,11 +33,10 @@ function Login() {
         navigate("/Admin")
       }
       else {
-        throw new Error("In valid user type")
+        throw new Error("Unvalid user type")
       }
     }
     catch (e: any) {
-      console.error(e);
       if (e.response?.data?.error?.message) {
         alert(e.response.data.error.message)
       }

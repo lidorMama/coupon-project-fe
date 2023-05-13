@@ -1,5 +1,7 @@
 .Footer {
   background-image: linear-gradient(to right, rgb(248, 150, 215), rgb(226, 212, 212));
+  max-width: 100%;
+  grid-column: span 12;
 }
 
 /* .Footer>.signature {

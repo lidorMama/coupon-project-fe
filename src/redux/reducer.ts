@@ -31,7 +31,7 @@ export function reduce(oldAppState: AppState = appStateInitialValue, action: Act
             break;
 
         case ActionType.SaveCategoriesList:
-            newAppState.categoriesList = action.payload.category;
+            newAppState.categoriesList = action.payload.categories;
             break;
     }
 

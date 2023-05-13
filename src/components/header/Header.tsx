@@ -10,7 +10,6 @@ import Category from '../category/Category';
 
 function Header() {
   const dispatch = useDispatch();
-  useEffect(() => { getAllCategories(); });
   const CategoriesList = useSelector((state: AppState) => state.categoriesList);
 
   async function getAllCategories() {
@@ -19,6 +18,7 @@ function Header() {
     let categories = response.data;
     dispatch({ type: ActionType.SaveCategoriesList, payload: { categories } });
   }
+  useEffect(() => { getAllCategories()},[]);
 
   function setSubText(subText: string) {
     dispatch({ type: ActionType.SaveSubText, payload: { subText } });
@@ -26,15 +26,15 @@ function Header() {
 
   return (
     <div className="Header">
-      <a><Link to="/" > <FaHome className="icon" /> </Link></a>
-      <a><Link to="/login" >Login</Link></a>
-      <a><Link to="/register" >Sing up</Link></a>
-      <a>Category
+      <div className="nav"><a><Link to="/" > <FaHome className="icon" /> </Link></a></div>
+      <div className="nav"><a><Link to="/login" >Login</Link></a></div>
+      <div className="nav"><a><Link to="/register" >Sing up</Link></a></div>
+      <div className="nav">
+      <a> Category</a>
         <div className="dropdown-content">
-        <p>Hello World!</p>
-         {/* {CategoriesList.map((category) => (<Category key={category.id} id={category.id} name={category.name} />))} */}
+         {CategoriesList.map((category) => (<Category key={category.id} id={category.id} name={category.name} />))}
         </div>
-      </a>
+      </div>
       <input type="text" className='search' placeholder='search..' onChange={event => setSubText(event.target.value)} />
     </div>
   );

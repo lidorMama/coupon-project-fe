@@ -1,5 +1,7 @@
 .Home{
     margin: 25px;
+    max-width: 100%;
+    grid-column: span 12;
 }
 
 .Home>.couponContoner{

@@ -1,21 +1,27 @@
 .Header {
   overflow: hidden;
   background-image: linear-gradient(to right, rgb(248, 150, 215), rgb(226, 212, 212));
+  max-width: 100%;
+  grid-column: span 12;
+}
+
+.Header>.nav {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 19px 17px;
 }
 
 .Header a {
-  float: left;
-  display: block;
   color: rgba(0, 0, 0, 0.899);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
   font-size: 18px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
+  cursor: none;
+  text-decoration: none;
 }
 
-.Header a:hover {
+.Header .nav:hover {
   background-color: rgb(250, 207, 236);
   color: black;
 }
@@ -32,7 +38,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.Header a>.dropdown-content {
+.Header .nav>.dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f990;
@@ -40,7 +46,7 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.Header a:hover .dropdown-content {
+.Header .nav:hover .dropdown-content {
   display: block;
 }
 
