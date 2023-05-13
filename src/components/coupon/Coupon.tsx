@@ -14,7 +14,7 @@ function Coupon(props: ICoupon) {
       <div className="card">
         <h2>{props.name}</h2>
         <p>price: {props.price}</p>
-        {userType == 'admin' &&
+        {userType == 'Admin' &&
           (<div className="change">
             <input type="button" className="button" value="change" />
           </div>)}
