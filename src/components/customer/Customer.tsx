@@ -1,9 +1,10 @@
+import Home from '../home/Home';
 import './Customer.css';
 
 function Customer() {
     return (
         <div className="Customer">
-            <h1>Customer</h1>
+            <Home></Home>
         </div>
     );
 }

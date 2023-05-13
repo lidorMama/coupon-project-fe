@@ -1,10 +1,11 @@
+import Home from '../home/Home';
 import './Admin.css';
 
 function Admin() {
 
     return (
         <div className="Admin">
-            <h1>Admin</h1>
+            <Home></Home>
         </div>
     )
 }

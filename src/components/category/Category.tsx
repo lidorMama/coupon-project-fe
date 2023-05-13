@@ -5,7 +5,7 @@ import './Category.css';
 function Category(props: ICategory) {
 
   return (
-    <div className="Coupon">
+    <div className="Category">
       <p>{props.name}</p>
     </div>
   );
