@@ -4,7 +4,7 @@ export default interface ICoupon{
     price: number;
     description: string;
     startDate?: string;
-    endDate?: string;
+    endDate: string;
     categoryName: string;
     companyName?: string;
 }

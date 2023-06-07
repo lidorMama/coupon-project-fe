@@ -4,6 +4,9 @@ import { AppState } from "../../redux/app-state";
 import axios from "axios";
 import { ActionType } from "../../redux/action-type";
 import Coupon from "../coupon/Coupon";
+import './Home.css';
+
+
 
 function Home() {
     const dispatch = useDispatch();

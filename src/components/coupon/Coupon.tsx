@@ -1,23 +1,45 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ICoupon from '../../models/ICoupon';
 import './Coupon.css';
 import { AppState } from '../../redux/app-state';
+import { ActionType } from '../../redux/action-type';
+import { CiEdit } from 'react-icons/ci';
+import { BsTrash } from 'react-icons/bs';
 
 
 function Coupon(props: ICoupon) {
-  const userType = useSelector((state: AppState) => state.successfulLoginData.userType);
+  const dispatch = useDispatch();
+  const logInData = useSelector((state: AppState) => state.successfulLoginData);
 
+  async function changeName(coupon: ICoupon) {
+    let couponId = coupon.id
+    dispatch({ type: ActionType.ChangeCouponName, payload: { couponId } });
+  }
 
   return (
     <div className="Coupon">
-      <img src="https://scontent.ftlv5-1.fna.fbcdn.net/v/t1.18169-9/25659743_1678669455488429_8544415159609159416_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=AjRjW44HVDoAX9zonPG&_nc_ht=scontent.ftlv5-1.fna&oh=00_AfDsIXyIt2G2IniE0PLJ8I1CasifChvKbWltXmFnyH5uSQ&oe=647698D1" alt="view" />
+      <img src="https://brownhotels.com/sites/default/files/styles/smush_mobile/public/deluxe_1.jpg?itok=KJm0MOU3" alt="view" />
       <div className="card">
         <h2>{props.name}</h2>
-        <p>price: {props.price}</p>
-        {userType == 'Admin' &&
-          (<div className="change">
-            <input type="button" className="button" value="change" />
-          </div>)}
+        <p id="description">{props.description}</p>
+      </div>
+      <div className="price"> <p>price: {props.price}</p></div>
+      <div className="purchse-button">
+        <button>
+          {logInData.userType == "Customer" && (<input type="button" value={"purchase"} onClick={() => changeName(props)} />)}
+          buy now
+        </button>
+      </div>
+      <div className="options-button">
+          {logInData.userType == "Admin" &&
+            (<select className="option-drop-down">
+              <option value="none" selected disabled hidden> options </option>
+              <option> <CiEdit></CiEdit> edit </option>
+              <option> <BsTrash></BsTrash> remove </option>
+            </select>)}
+        </div>
+      <div className="end-date">
+        <p>expires:  {new Date(props.endDate).toLocaleDateString()} </p>
       </div>
     </div>
   );

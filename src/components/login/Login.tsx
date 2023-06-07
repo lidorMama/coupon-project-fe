@@ -24,13 +24,13 @@ function Login() {
       console.log(successfulLoginData)
       // axios.defaults.headers.common['Authorization'] = "Bearer " + token;
       if (successfulLoginData.userType == 'Company') {
-        navigate("/Company")
+        navigate("/")
       }
       else if (successfulLoginData.userType == 'Customer') {
-        navigate("/Customer")
+        navigate("/")
       }
       else if (successfulLoginData.userType == 'Admin') {
-        navigate("/Admin")
+        navigate("/")
       }
       else {
         throw new Error("Unvalid user type")
@@ -52,7 +52,7 @@ function Login() {
         <div className="body">
 
           <div>
-            <h1>Login page</h1>
+            <h1>Sign In</h1>
           </div>
 
           <div className="second-input">
@@ -70,7 +70,7 @@ function Login() {
           </div>
 
           <p className="link">
-          <a><Link to="/register" >Sing up</Link></a><br />
+          <a><Link to="/register" >Sign Up</Link></a><br />
           <a><Link to="" >Forget Passworde </Link></a>
           </p>
 

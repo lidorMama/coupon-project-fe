@@ -1,12 +1,12 @@
 .Coupon {
     background-color: white;
     box-shadow: 0 0 50px rgb(69, 72, 71);
-    width: 200px;
-    /* height: 200px; */
+    width: 220px;
+    height: 370px;
     margin: 30px;
     border-radius: 30px;
     border: 1px solid #bcb9b9;
-    float:left;
+    float: left;
 }
 
 .Coupon:hover {
@@ -21,13 +21,18 @@
     width: 190px;
     /* height: 130px; */
     padding-top: 10px;
+    position: relative;
+    top: 5px;
 }
 
+
 .Coupon>.card {
-    margin-top: 10px;
     display: block;
     text-align: center;
     padding: 1px 25px;
+    position: relative;
+    top: 15px;
+    height: 41%;
 }
 
 .card>h2 {
@@ -38,7 +43,42 @@
 }
 
 .card>p {
-    font-size: 19px;
+    font-size: 21px;
     font-family: Garamond, serif;
     margin: 4px 0px 12px 0px;
+}
+
+.Coupon>.price {
+    display: block;
+    position: relative;
+    bottom: 15%;
+}
+
+.price>p {
+    font-family: Garamond, serif;
+    font-size: 15px;
+}
+
+.Coupon>.end-date {
+    display: block;
+    position: relative;
+    bottom: 11%;
+}
+
+.end-date>p {
+    font-size: x-small;
+    font-weight: bold;
+    position: relative;
+}
+
+.Coupon>.purchse-button {
+    position: relative;
+    bottom: 15%;
+}
+.purchse-button> button{
+    border-radius: 25px;
+    background-color: rgba(236, 228, 234, 0.503);
+    font-family: Georgia, serif;
+    font-size: 15px;
+
 }

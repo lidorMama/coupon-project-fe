@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className="Footer">
       <div className="signature">
-        <p>@Created by lidor mama</p>
+        <p>Created by lidor mama</p>
       </div>
     </div>
 

@@ -18,7 +18,7 @@ function Header() {
     let categories = response.data;
     dispatch({ type: ActionType.SaveCategoriesList, payload: { categories } });
   }
-  useEffect(() => { getAllCategories()},[]);
+  useEffect(() => { getAllCategories() }, []);
 
   function setSubText(subText: string) {
     dispatch({ type: ActionType.SaveSubText, payload: { subText } });
@@ -26,16 +26,17 @@ function Header() {
 
   return (
     <div className="Header">
-      <div className="nav"><a><Link to="/" > <FaHome className="icon" /> </Link></a></div>
-      <div className="nav"><a><Link to="/login" >Login</Link></a></div>
-      <div className="nav"><a><Link to="/register" >Sing up</Link></a></div>
+      <div className="logo"> <span className="logo-text">lm</span> </div>
+      <div className="search-box"> <input type="text" className='search' placeholder='search..' onChange={event => setSubText(event.target.value)} /></div>
+      <div className="nav"><a><Link to="/login" >Sign In</Link></a></div>
+      <div className="nav"><a><Link to="/register" >Sign Up</Link></a></div>
       <div className="nav">
-      <a> Category</a>
-        <div className="dropdown-content">
-         {CategoriesList.map((category) => (<Category key={category.id} id={category.id} name={category.name} />))}
-        </div>
+        <a> Category</a>
+        <select className="dropdown-content" value={"Category"}>
+          <option>Choose a category</option>
+          {CategoriesList.map((category) => <option><Category key={category.id} id={category.id} name={category.name} /> </option>)}
+        </select>
       </div>
-      <input type="text" className='search' placeholder='search..' onChange={event => setSubText(event.target.value)} />
     </div>
   );
 }
