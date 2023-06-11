@@ -8,7 +8,9 @@
 
 .Home>.couponContoner {
     margin: 25px;
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
+    position: relative;
     width: 100%;
 }
+

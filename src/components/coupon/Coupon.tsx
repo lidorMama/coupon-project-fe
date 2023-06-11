@@ -8,13 +8,14 @@ import { BsTrash } from 'react-icons/bs';
 
 
 function Coupon(props: ICoupon) {
-  const dispatch = useDispatch();
-  const logInData = useSelector((state: AppState) => state.successfulLoginData);
+  const successfulLoginData = useSelector((state: AppState) => state.successfulLoginData);
+  // const dispatch = useDispatch();
 
-  async function changeName(coupon: ICoupon) {
-    let couponId = coupon.id
-    dispatch({ type: ActionType.ChangeCouponName, payload: { couponId } });
-  }
+
+  // async function changeName(coupon: ICoupon) {
+  //   let couponId = coupon.id
+  //   dispatch({ type: ActionType.ChangeCouponName, payload: { couponId } });
+  // }
 
   return (
     <div className="Coupon">
@@ -25,13 +26,10 @@ function Coupon(props: ICoupon) {
       </div>
       <div className="price"> <p>price: {props.price}</p></div>
       <div className="purchse-button">
-        <button>
-          {logInData.userType == "Customer" && (<input type="button" value={"purchase"} onClick={() => changeName(props)} />)}
-          buy now
-        </button>
+          {successfulLoginData.userType == "Customer" && (<input type="button" value={"buy now"}  />)}
       </div>
       <div className="options-button">
-          {logInData.userType == "Admin" &&
+          {successfulLoginData.userType == "Admin" &&
             (<select className="option-drop-down">
               <option value="none" selected disabled hidden> options </option>
               <option> <CiEdit></CiEdit> edit </option>

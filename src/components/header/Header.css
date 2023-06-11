@@ -24,17 +24,16 @@
   transform: scale(1.05);
 }
 
-.logo-text {
+.logo a{
    font-family: 'Brush Script MT', cursive;
   font-size: 40px;
   font-weight: bold;
   color: black;
- 
   letter-spacing: 2px;
 }
 
 
-.Header a {
+.nav a {
   color: rgba(0, 0, 0, 0.899);
   font-size: 18px;
   font-weight: bold;

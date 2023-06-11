@@ -35,6 +35,9 @@ function Home() {
                 })
                     .map((coupon) => (<Coupon key={coupon.id} name={coupon.name} price={coupon.price} description={coupon.description} id={coupon.id} startDate={coupon.startDate} endDate={coupon.endDate} categoryName={coupon.categoryName} companyName={coupon.companyName} />))}
             </div>
+            {/* <div className="pageNumber">
+                <input id="number-box" type="number" placeholder="Page Number" min={1} onChange={event => setPageNumber (+event.target.value)}/>
+            </div> */}
         </div>
     )
 }

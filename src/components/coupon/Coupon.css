@@ -71,11 +71,11 @@
     position: relative;
 }
 
-.Coupon>.purchse-button {
+.Coupon>.purchse-button,.options-button {
     position: relative;
     bottom: 15%;
 }
-.purchse-button> button{
+.purchse-button> input, select{
     border-radius: 25px;
     background-color: rgba(236, 228, 234, 0.503);
     font-family: Georgia, serif;

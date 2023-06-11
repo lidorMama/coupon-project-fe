@@ -26,7 +26,7 @@ function Header() {
 
   return (
     <div className="Header">
-      <div className="logo"> <span className="logo-text">lm</span> </div>
+      <div className="logo"> <span><Link to="/" >LM</Link></span> </div>
       <div className="search-box"> <input type="text" className='search' placeholder='search..' onChange={event => setSubText(event.target.value)} /></div>
       <div className="nav"><a><Link to="/login" >Sign In</Link></a></div>
       <div className="nav"><a><Link to="/register" >Sign Up</Link></a></div>

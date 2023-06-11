@@ -7,7 +7,6 @@ const appStateInitialValue = new AppState();
 
 // This function is NOT called direcrtly by you
 export function reduce(oldAppState: AppState = appStateInitialValue, action: Action): AppState {
-    debugger;
     // Cloning the oldState (creating a copy)
     const newAppState = { ...oldAppState };
 
@@ -17,7 +16,7 @@ export function reduce(oldAppState: AppState = appStateInitialValue, action: Act
             break;
 
         case ActionType.SaveDecryptedToken:
-            newAppState.successfulLoginData = action.payload.decryptedToken;
+            newAppState.successfulLoginData = action.payload.successfulLoginData;
             break;
 
         case ActionType.ChangeCouponName:

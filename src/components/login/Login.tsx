@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaLock, FaMailBulk } from "react-icons/fa";
 import './Login.css';
 import jwt_decode from 'jwt-decode';
 import { Link, useNavigate } from 'react-router-dom';
 import ISuccessfulLoginData from '../../models/ISuccessfulLoginData';
+import { useDispatch } from 'react-redux';
+import { ActionType } from '../../redux/action-type';
 
 
 
@@ -12,7 +14,7 @@ function Login() {
   let [userName, setUserName] = useState("");
   let [password, setPassword] = useState("");
   const navigate = useNavigate()
-
+  const dispatch = useDispatch();
 
   async function onButtonClick() {
     try {
@@ -21,7 +23,7 @@ function Login() {
       let decodedToken: any = jwt_decode(token);
       let strSuccessfulLoginResponse: string = decodedToken.sub;
       let successfulLoginData: ISuccessfulLoginData = JSON.parse(strSuccessfulLoginResponse);
-      console.log(successfulLoginData)
+      dispatch({ type: ActionType.SaveDecryptedToken, payload: { successfulLoginData } });
       // axios.defaults.headers.common['Authorization'] = "Bearer " + token;
       if (successfulLoginData.userType == 'Company') {
         navigate("/")
@@ -46,6 +48,7 @@ function Login() {
     }
   }
 
+
   return (
     <div className="Login">
       <div className="main">
@@ -66,7 +69,7 @@ function Login() {
           </div>
 
           <div className="login-button">
-            <input type="button" className="button" value="Login" onClick={onButtonClick} /><br />
+            <input type="button" className="button" value="Login" onClick={() => onButtonClick()} /><br />
           </div>
 
           <p className="link">
